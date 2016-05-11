@@ -1,0 +1,18 @@
+### Test Case Generation Statistics
+### Test Goal Satisfaction
+ - defined 2 test goals
+ - satisfied 0 test goals (0.0 %)
+
+### unsatisfied test goals
+
+ - not satisfied: (test goal #1 - traversed transition) 
+   from node Register Material::Region1::RegisteredMaterial
+   to node Register Material::Region1::Final
+   triggered by default
+ - not satisfied: (test goal #2 - traversed transition) 
+   from node Register Material::Region1::Initial
+   to node tmp1
+   triggered by default
+
+### satisfied test goals
+

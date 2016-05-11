@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_3KrE8Be0EeaYcJlU0sFbQA" name="">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_4vyooBe0EeaYcJlU0sFbQA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_GgROkBe4EeaYcJlU0sFbQA" name="estoque">
+    <packagedElement xmi:type="uml:Class" xmi:id="_Jb-KsBe4EeaYcJlU0sFbQA" name="Material">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_pLsr0Be4EeaYcJlU0sFbQA" name="idVal" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JPL80BfBEeaYcJlU0sFbQA"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_fAP1YBfBEeaYcJlU0sFbQA" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O4gPYBe5EeaYcJlU0sFbQA" name="skuVal" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NoQO0BfBEeaYcJlU0sFbQA"/>
+        <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_9pxCwBfJEeaUOKVFokqblw" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_taEe0Be6EeaYcJlU0sFbQA" name="state" type="_Rj7wUBe4EeaYcJlU0sFbQA"/>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_3Va8YBe0EeaYcJlU0sFbQA" name="Register Material">
+        <region xmi:type="uml:Region" xmi:id="_3bXMUBe0EeaYcJlU0sFbQA" name="Region1">
+          <transition xmi:type="uml:Transition" xmi:id="_7lKPEBe7EeaYcJlU0sFbQA" name="initial2RegisteredMaterial" guard="_wCDmABfAEeaYcJlU0sFbQA" source="_geo8cBe1EeaYcJlU0sFbQA" target="_kEN8ABe1EeaYcJlU0sFbQA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_wCDmABfAEeaYcJlU0sFbQA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_xEbpABfAEeaYcJlU0sFbQA" value="(idVal > 0) and (skuVal > 0)"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_d4ofUBe8EeaYcJlU0sFbQA" name="registerMaterial" specification="_cYuIkBe4EeaYcJlU0sFbQA"/>
+            <trigger xmi:type="uml:Trigger" xmi:id="_L-Kd0Be8EeaYcJlU0sFbQA"/>
+          </transition>
+          <transition xmi:type="uml:Transition" xmi:id="_3qabUBe8EeaYcJlU0sFbQA" name="RegisteredMaterial2Final" source="_kEN8ABe1EeaYcJlU0sFbQA" target="_z7SF4Be2EeaYcJlU0sFbQA"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_geo8cBe1EeaYcJlU0sFbQA" name="Initial"/>
+          <subvertex xmi:type="uml:State" xmi:id="_kEN8ABe1EeaYcJlU0sFbQA" name="RegisteredMaterial" stateInvariant="_guJpABe-EeaYcJlU0sFbQA">
+            <ownedRule xmi:type="uml:Constraint" xmi:id="_guJpABe-EeaYcJlU0sFbQA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_hu57YBe-EeaYcJlU0sFbQA" name="" type="_Rj7wUBe4EeaYcJlU0sFbQA" value="state=State::RegisteredMaterial"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_z7SF4Be2EeaYcJlU0sFbQA" name="Final"/>
+          <subvertex xmi:type="uml:State" xmi:id="_VvlzQBfKEeaUOKVFokqblw" name="Fail"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_cYuIkBe4EeaYcJlU0sFbQA" name="registerMaterial" method="_d4ofUBe8EeaYcJlU0sFbQA" postcondition="_5WFaUBe5EeaYcJlU0sFbQA">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_5WFaUBe5EeaYcJlU0sFbQA">
+          <specification xmi:type="uml:LiteralString" xmi:id="_6kzQMBe5EeaYcJlU0sFbQA" value="(idVal = id) and (skuVal = sku)"/>
+        </ownedRule>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_qGWgwBe5EeaYcJlU0sFbQA" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_wlxbQBe5EeaYcJlU0sFbQA" name="sku">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Rj7wUBe4EeaYcJlU0sFbQA" name="State">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Tj7SIBe4EeaYcJlU0sFbQA" name="RegisteredMaterial"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_m5hIoBfKEeaUOKVFokqblw" name="Fail"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_dcD7QBfAEeaYcJlU0sFbQA" name="registerMaterialEvent" operation="_cYuIkBe4EeaYcJlU0sFbQA"/>
+  </packagedElement>
+</uml:Model>
