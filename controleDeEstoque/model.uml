@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ebpTcBYUEeaX_ac1b8FA5Q" name="">
+  <packagedElement xmi:type="uml:Package" xmi:id="_ayrdEBbiEeaqkpzXj6aL_A" name="estoque">
+    <packagedElement xmi:type="uml:Class" xmi:id="_enYdwBbiEeaqkpzXj6aL_A" name="Material" classifierBehavior="_mmC1QBcVEeakstzQAEOgQw">
+      <ownedAttribute xmi:id="_4IlSwBd0EeaJ35jX80hkAA" name="skuUnique">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_9yahsBd3EeaJ35jX80hkAA" name="idMat">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ELong"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JmqL0Bd4EeaJ35jX80hkAA" name="nameStr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_cFOY4Bd4EeaJ35jX80hkAA" name="descStr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_i42o0Bd4EeaJ35jX80hkAA" name="unitStr">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ej6IMBeAEeaJ35jX80hkAA" name="skuIsUnique">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_vEGkEBeAEeaJ35jX80hkAA" value="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EBoolean"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_8tsr8BYwEea9qa0QAO7oWw" name="Register Material">
+        <region xmi:id="_BowQsBYxEea9qa0QAO7oWw" name="Region1">
+          <transition xmi:id="__5qIABboEeaYO5k_9qWkCQ" name="initialFail1" guard="_QhgU8BbyEeaL9YVDr_Z7kw" source="_IyBZcBYxEea9qa0QAO7oWw" target="_7JY28BboEeaYO5k_9qWkCQ">
+            <ownedRule xmi:id="_QhgU8BbyEeaL9YVDr_Z7kw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_WAOncBbyEeaL9YVDr_Z7kw" name="" value="skuIsUnique = false"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_YeUy0Bb4EeaL9YVDr_Z7kw" name="registerMaterial" specification="_6b5tkBbiEeaqkpzXj6aL_A"/>
+            <trigger xmi:id="_gQLbABb3EeaL9YVDr_Z7kw" name="registerFailTg" event="_vR23ABbiEeaqkpzXj6aL_A"/>
+          </transition>
+          <transition xmi:id="_tDwjkBbpEeaYO5k_9qWkCQ" name="fail1Final" source="_7JY28BboEeaYO5k_9qWkCQ" target="_ZmEWsBY3EeaUGu31IsyqUw"/>
+          <transition xmi:id="_lMLG0BbqEeaYO5k_9qWkCQ" name="initialRegistered" guard="_65JP8BbyEeaL9YVDr_Z7kw" source="_IyBZcBYxEea9qa0QAO7oWw" target="_jHi8oBbqEeaYO5k_9qWkCQ">
+            <ownedRule xmi:id="_65JP8BbyEeaL9YVDr_Z7kw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_8m3WABbyEeaL9YVDr_Z7kw" value="skuIsUnique = true"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_AXBboBb4EeaL9YVDr_Z7kw" name="registerMaterial" specification="_6b5tkBbiEeaqkpzXj6aL_A"/>
+            <trigger xmi:id="_qv_TsBb1EeaL9YVDr_Z7kw" name="registerTg" event="_vR23ABbiEeaqkpzXj6aL_A"/>
+          </transition>
+          <transition xmi:id="_oT8JABbqEeaYO5k_9qWkCQ" name="registeredFinal" source="_jHi8oBbqEeaYO5k_9qWkCQ" target="_ZmEWsBY3EeaUGu31IsyqUw"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_IyBZcBYxEea9qa0QAO7oWw" name="Initial"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_ZmEWsBY3EeaUGu31IsyqUw" name="Final"/>
+          <subvertex xmi:type="uml:State" xmi:id="_7JY28BboEeaYO5k_9qWkCQ" name="Fail1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_jHi8oBbqEeaYO5k_9qWkCQ" name="MaterialRegistered"/>
+        </region>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_mmC1QBcVEeakstzQAEOgQw" name="Insert Material">
+        <region xmi:id="_oFcLcBcVEeakstzQAEOgQw" name="Region1">
+          <transition xmi:id="_AaZkIBcWEeakstzQAEOgQw" name="initialStock" guard="_v5xjEBcYEeakstzQAEOgQw" source="_ub9BkBcVEeakstzQAEOgQw" target="_0LBdMBcVEeakstzQAEOgQw">
+            <ownedRule xmi:id="_v5xjEBcYEeakstzQAEOgQw" name="validRegister">
+              <specification xmi:type="uml:LiteralString" xmi:id="_djhIABcZEeakstzQAEOgQw" value="(qntMat != 0) and (registeredMat() == true)"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_9DgkABcZEeakstzQAEOgQw" name="insertMaterial" specification="_YFncQBcWEeakstzQAEOgQw"/>
+            <trigger xmi:id="_pUuFMBcZEeakstzQAEOgQw" name="materialInsertedTg" event="_mp56MBcYEeakstzQAEOgQw"/>
+          </transition>
+          <transition xmi:id="_Dmu9QBcWEeakstzQAEOgQw" name="stockFinal" source="_0LBdMBcVEeakstzQAEOgQw" target="_vD0S0BcVEeakstzQAEOgQw"/>
+          <transition xmi:id="_37VT0BcaEeakstzQAEOgQw" name="initialFail1" guard="_KUFz0BcbEeakstzQAEOgQw" source="_ub9BkBcVEeakstzQAEOgQw" target="_z-BJsBcaEeakstzQAEOgQw">
+            <ownedRule xmi:id="_KUFz0BcbEeakstzQAEOgQw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_MHNXQBcbEeakstzQAEOgQw" value="registeredMat() == false"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_0OziQBcbEeakstzQAEOgQw" name="insertMaterial" specification="_YFncQBcWEeakstzQAEOgQw"/>
+            <trigger xmi:id="_sSyG4BcbEeakstzQAEOgQw" name="insertFailedTg" event="_mp56MBcYEeakstzQAEOgQw"/>
+          </transition>
+          <transition xmi:id="_7G7GEBcaEeakstzQAEOgQw" name="fail1Final" source="_z-BJsBcaEeakstzQAEOgQw" target="_vD0S0BcVEeakstzQAEOgQw"/>
+          <transition xmi:id="_zJfDgBccEeakstzQAEOgQw" name="initalFail2" guard="_doVZwBcdEeakstzQAEOgQw" source="_ub9BkBcVEeakstzQAEOgQw" target="_rQ7L0BccEeakstzQAEOgQw">
+            <ownedRule xmi:id="_doVZwBcdEeakstzQAEOgQw">
+              <specification xmi:type="uml:LiteralString" xmi:id="_hAb-ABcdEeakstzQAEOgQw" value="(registeredMat() == true) and (qntMat == 0)"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_0LfdoBcdEeakstzQAEOgQw" name="insertMaterial" specification="_YFncQBcWEeakstzQAEOgQw"/>
+            <trigger xmi:id="_r_RDEBcdEeakstzQAEOgQw" name="insertFailedTg" event="_mp56MBcYEeakstzQAEOgQw"/>
+          </transition>
+          <transition xmi:id="_1jj5QBccEeakstzQAEOgQw" name="Fail2Final" source="_rQ7L0BccEeakstzQAEOgQw" target="_vD0S0BcVEeakstzQAEOgQw"/>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_ub9BkBcVEeakstzQAEOgQw" name="Initial"/>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_vD0S0BcVEeakstzQAEOgQw" name="Final"/>
+          <subvertex xmi:type="uml:State" xmi:id="_0LBdMBcVEeakstzQAEOgQw" name="Stock"/>
+          <subvertex xmi:type="uml:State" xmi:id="_z-BJsBcaEeakstzQAEOgQw" name="Fail1"/>
+          <subvertex xmi:type="uml:State" xmi:id="_rQ7L0BccEeakstzQAEOgQw" name="Fail2"/>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_6b5tkBbiEeaqkpzXj6aL_A" name="registerMaterial" method="_AXBboBb4EeaL9YVDr_Z7kw _YeUy0Bb4EeaL9YVDr_Z7kw" bodyCondition="_L_C08Bd3EeaJ35jX80hkAA" isQuery="true">
+        <ownedRule xmi:id="_L_C08Bd3EeaJ35jX80hkAA">
+          <specification xmi:type="uml:LiteralString" xmi:id="_bBdEMBd3EeaJ35jX80hkAA" value="(idMat = id) and  (nameStr = name) and (skuUnique = sku)  and (descStr = desc) and (unitStr = unit) "/>
+        </ownedRule>
+        <ownedParameter xmi:id="_kmkJQBbzEeaL9YVDr_Z7kw" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ELong"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_hv_vUBb0EeaL9YVDr_Z7kw" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_j2KxoBb0EeaL9YVDr_Z7kw" name="sku">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_mICGkBb0EeaL9YVDr_Z7kw" name="desc">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_pFn5EBb0EeaL9YVDr_Z7kw" name="unit">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_YFncQBcWEeakstzQAEOgQw" name="insertMaterial" method="_9DgkABcZEeakstzQAEOgQw _0OziQBcbEeakstzQAEOgQw _0LfdoBcdEeakstzQAEOgQw" bodyCondition="_39KW0Bd9EeaJ35jX80hkAA">
+        <ownedRule xmi:id="_39KW0Bd9EeaJ35jX80hkAA">
+          <specification xmi:type="uml:LiteralString" xmi:id="_6KXOMBd9EeaJ35jX80hkAA" value="(idMat = id) and (skuUnique = sku)"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_VbLZ0BcXEeakstzQAEOgQw" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#ELong"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_W9uKoBcXEeakstzQAEOgQw" name="sku">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_METAMODELS/Ecore.metamodel.uml#EInt"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_vR23ABbiEeaqkpzXj6aL_A" name="registerMaterialEvent" operation="_6b5tkBbiEeaqkpzXj6aL_A"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_mp56MBcYEeakstzQAEOgQw" name="insertMaterialEvent" operation="_YFncQBcWEeakstzQAEOgQw"/>
+  </packagedElement>
+  <profileApplication xmi:id="_6bLA8BY2EeaUGu31IsyqUw">
+    <eAnnotations xmi:id="_6bRuoBY2EeaUGu31IsyqUw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
