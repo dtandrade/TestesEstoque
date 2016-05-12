@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_GQfeMBhdEea5D_ilAb1d4g" name="">
+  <packagedElement xmi:type="uml:Package" xmi:id="_6LHyYBhdEea5D_ilAb1d4g" name="estoque2">
+    <packagedElement xmi:type="uml:Class" xmi:id="_8Wqc4BhdEea5D_ilAb1d4g" name="Material">
+      <ownedAttribute xmi:id="_BaPrgBheEea5D_ilAb1d4g" name="state" type="_Lf_zgBheEea5D_ilAb1d4g"/>
+      <ownedAttribute xmi:id="_j0IooBhlEea5D_ilAb1d4g" name="registerStatus">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rM3wwBhlEea5D_ilAb1d4g" value="false">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_Qdgr0BhdEea5D_ilAb1d4g" name="Register">
+        <region xmi:id="_RFgf8BhdEea5D_ilAb1d4g" name="Region1">
+          <transition xmi:id="_ouLdkBhhEea5D_ilAb1d4g" name="Initial2Idle" source="_c6vBgBhdEea5D_ilAb1d4g" target="_e2oGcBhdEea5D_ilAb1d4g"/>
+          <transition xmi:id="_sO_48BhhEea5D_ilAb1d4g" name="Idle2Registering" source="_e2oGcBhdEea5D_ilAb1d4g" target="_sX82EBhgEea5D_ilAb1d4g">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_0ESkwBhiEea5D_ilAb1d4g" name="registerOp" specification="_bhXlYBheEea5D_ilAb1d4g"/>
+            <trigger xmi:id="_m7IWIBhiEea5D_ilAb1d4g" event="_RL4tYBhgEea5D_ilAb1d4g"/>
+          </transition>
+          <transition xmi:id="_wFd0MBhhEea5D_ilAb1d4g" name="Registering2Registered" guard="_Q9M-4BhlEea5D_ilAb1d4g" source="_sX82EBhgEea5D_ilAb1d4g" target="_0I8GIBhgEea5D_ilAb1d4g">
+            <ownedRule xmi:id="_Q9M-4BhlEea5D_ilAb1d4g">
+              <specification xmi:type="uml:LiteralString" xmi:id="_SaFMkBhlEea5D_ilAb1d4g" value="registerVal = true">
+                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+              </specification>
+            </ownedRule>
+            <trigger xmi:id="_9XhqsBhiEea5D_ilAb1d4g" event="_bqtcsBhgEea5D_ilAb1d4g"/>
+          </transition>
+          <transition xmi:id="_1PJDwBhhEea5D_ilAb1d4g" name="Registered2Final" source="_0I8GIBhgEea5D_ilAb1d4g" target="_j0fuoBhdEea5D_ilAb1d4g"/>
+          <transition xmi:id="_7cR7cBhhEea5D_ilAb1d4g" name="Registered2Idle" source="_0I8GIBhgEea5D_ilAb1d4g" target="_e2oGcBhdEea5D_ilAb1d4g">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_YDsLUBhjEea5D_ilAb1d4g" name="addRegisterOp"/>
+            <trigger xmi:id="_V0OqIBhjEea5D_ilAb1d4g" event="_gLoqMBhgEea5D_ilAb1d4g"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_c6vBgBhdEea5D_ilAb1d4g" name="Inicial"/>
+          <subvertex xmi:type="uml:State" xmi:id="_e2oGcBhdEea5D_ilAb1d4g" name="Idle" stateInvariant="_yb3nsBhdEea5D_ilAb1d4g">
+            <ownedRule xmi:id="_yb3nsBhdEea5D_ilAb1d4g">
+              <specification xmi:type="uml:LiteralString" xmi:id="_zv-68BhdEea5D_ilAb1d4g" name="" value="state=State::Idle"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_j0fuoBhdEea5D_ilAb1d4g" name="Final"/>
+          <subvertex xmi:type="uml:State" xmi:id="_sX82EBhgEea5D_ilAb1d4g" name="Registering" stateInvariant="__ABkcBhgEea5D_ilAb1d4g">
+            <ownedRule xmi:id="__ABkcBhgEea5D_ilAb1d4g">
+              <specification xmi:type="uml:LiteralString" xmi:id="_Aje7QBhhEea5D_ilAb1d4g" value="state=State::Registering"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_0I8GIBhgEea5D_ilAb1d4g" name="Registered" stateInvariant="_HDcoUBhhEea5D_ilAb1d4g">
+            <ownedRule xmi:id="_HDcoUBhhEea5D_ilAb1d4g">
+              <specification xmi:type="uml:LiteralString" xmi:id="_KEq9oBhhEea5D_ilAb1d4g" value="state=State::Registered"/>
+            </ownedRule>
+          </subvertex>
+        </region>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_bhXlYBheEea5D_ilAb1d4g" name="registerOp" method="_0ESkwBhiEea5D_ilAb1d4g"/>
+      <ownedOperation xmi:id="_smVs0BhfEea5D_ilAb1d4g" name="validOp">
+        <ownedParameter xmi:id="_z83KQBhmEea5D_ilAb1d4g" name="registerVal">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_1DrFgBhfEea5D_ilAb1d4g" name="addRegisterOp"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_Lf_zgBheEea5D_ilAb1d4g" name="State">
+      <ownedLiteral xmi:id="_WcwmkBhfEea5D_ilAb1d4g" name="Idle"/>
+      <ownedLiteral xmi:id="_ZpscoBhfEea5D_ilAb1d4g" name="Registering"/>
+      <ownedLiteral xmi:id="_ccab4BhfEea5D_ilAb1d4g" name="Registered"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_RL4tYBhgEea5D_ilAb1d4g" name="registerEvent" operation="_bhXlYBheEea5D_ilAb1d4g"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_bqtcsBhgEea5D_ilAb1d4g" name="validEvent" operation="_smVs0BhfEea5D_ilAb1d4g"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_gLoqMBhgEea5D_ilAb1d4g" name="addRegisterEvent" operation="_1DrFgBhfEea5D_ilAb1d4g"/>
+  </packagedElement>
+  <profileApplication xmi:id="_tjgDNxhgEea5D_ilAb1d4g">
+    <eAnnotations xmi:id="_tjp0MBhgEea5D_ilAb1d4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
+  </profileApplication>
+</uml:Model>
