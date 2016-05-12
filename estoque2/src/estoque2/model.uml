@@ -3,9 +3,21 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_6LHyYBhdEea5D_ilAb1d4g" name="estoque2">
     <packagedElement xmi:type="uml:Class" xmi:id="_8Wqc4BhdEea5D_ilAb1d4g" name="Material">
       <ownedAttribute xmi:id="_BaPrgBheEea5D_ilAb1d4g" name="state" type="_Lf_zgBheEea5D_ilAb1d4g"/>
-      <ownedAttribute xmi:id="_j0IooBhlEea5D_ilAb1d4g" name="registerStatus">
+      <ownedAttribute xmi:id="_PlCFgBh6Eeac6d6escPbdA" name="skuMaterial">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_1maK4Bh6Eeac6d6escPbdA" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_dFUasBh6Eeac6d6escPbdA" name="unitMaterial">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_pbu9wBh6Eeac6d6escPbdA" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_OddAIBh_Eeac6d6escPbdA" name="registerStatus">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rM3wwBhlEea5D_ilAb1d4g" value="false">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_VBFFMBh_Eeac6d6escPbdA" value="false">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </defaultValue>
       </ownedAttribute>
@@ -16,18 +28,17 @@
             <effect xmi:type="uml:FunctionBehavior" xmi:id="_0ESkwBhiEea5D_ilAb1d4g" name="registerOp" specification="_bhXlYBheEea5D_ilAb1d4g"/>
             <trigger xmi:id="_m7IWIBhiEea5D_ilAb1d4g" event="_RL4tYBhgEea5D_ilAb1d4g"/>
           </transition>
-          <transition xmi:id="_wFd0MBhhEea5D_ilAb1d4g" name="Registering2Registered" guard="_Q9M-4BhlEea5D_ilAb1d4g" source="_sX82EBhgEea5D_ilAb1d4g" target="_0I8GIBhgEea5D_ilAb1d4g">
-            <ownedRule xmi:id="_Q9M-4BhlEea5D_ilAb1d4g">
-              <specification xmi:type="uml:LiteralString" xmi:id="_SaFMkBhlEea5D_ilAb1d4g" value="registerVal = true">
-                <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-              </specification>
-            </ownedRule>
-            <trigger xmi:id="_9XhqsBhiEea5D_ilAb1d4g" event="_bqtcsBhgEea5D_ilAb1d4g"/>
+          <transition xmi:id="_1PJDwBhhEea5D_ilAb1d4g" name="Registered2Final" source="_0I8GIBhgEea5D_ilAb1d4g" target="_j0fuoBhdEea5D_ilAb1d4g">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_mPLQQBh8Eeac6d6escPbdA" name="finaliseOp" specification="_7J2I0Bh7Eeac6d6escPbdA"/>
+            <trigger xmi:id="_jC46cBh8Eeac6d6escPbdA" event="_3F-DsBh7Eeac6d6escPbdA"/>
           </transition>
-          <transition xmi:id="_1PJDwBhhEea5D_ilAb1d4g" name="Registered2Final" source="_0I8GIBhgEea5D_ilAb1d4g" target="_j0fuoBhdEea5D_ilAb1d4g"/>
-          <transition xmi:id="_7cR7cBhhEea5D_ilAb1d4g" name="Registered2Idle" source="_0I8GIBhgEea5D_ilAb1d4g" target="_e2oGcBhdEea5D_ilAb1d4g">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_YDsLUBhjEea5D_ilAb1d4g" name="addRegisterOp"/>
-            <trigger xmi:id="_V0OqIBhjEea5D_ilAb1d4g" event="_gLoqMBhgEea5D_ilAb1d4g"/>
+          <transition xmi:id="_JOZwEBh5Eeac6d6escPbdA" name="Registering2Validating" source="_sX82EBhgEea5D_ilAb1d4g" target="_Cdfc8Bh5Eeac6d6escPbdA">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_yW1loBh8Eeac6d6escPbdA" name="validOp" specification="_smVs0BhfEea5D_ilAb1d4g"/>
+            <trigger xmi:id="_t9-H8Bh8Eeac6d6escPbdA" event="_bqtcsBhgEea5D_ilAb1d4g"/>
+          </transition>
+          <transition xmi:id="_QYpJMBh5Eeac6d6escPbdA" name="Validating2Registered" source="_Cdfc8Bh5Eeac6d6escPbdA" target="_0I8GIBhgEea5D_ilAb1d4g">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_A_vIsBh9Eeac6d6escPbdA" name="saveOp" specification="_rmtu8Bh3Eeac6d6escPbdA"/>
+            <trigger xmi:id="_9sjgsBh8Eeac6d6escPbdA" event="_xw6DgBh7Eeac6d6escPbdA"/>
           </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_c6vBgBhdEea5D_ilAb1d4g" name="Inicial"/>
           <subvertex xmi:type="uml:State" xmi:id="_e2oGcBhdEea5D_ilAb1d4g" name="Idle" stateInvariant="_yb3nsBhdEea5D_ilAb1d4g">
@@ -46,15 +57,24 @@
               <specification xmi:type="uml:LiteralString" xmi:id="_KEq9oBhhEea5D_ilAb1d4g" value="state=State::Registered"/>
             </ownedRule>
           </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_Cdfc8Bh5Eeac6d6escPbdA" name="Validating"/>
         </region>
       </ownedBehavior>
       <ownedOperation xmi:id="_bhXlYBheEea5D_ilAb1d4g" name="registerOp" method="_0ESkwBhiEea5D_ilAb1d4g"/>
-      <ownedOperation xmi:id="_smVs0BhfEea5D_ilAb1d4g" name="validOp">
-        <ownedParameter xmi:id="_z83KQBhmEea5D_ilAb1d4g" name="registerVal">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <ownedOperation xmi:id="_smVs0BhfEea5D_ilAb1d4g" name="validOp" method="_yW1loBh8Eeac6d6escPbdA" postcondition="_L0ZQABh7Eeac6d6escPbdA">
+        <ownedRule xmi:id="_L0ZQABh7Eeac6d6escPbdA">
+          <specification xmi:type="uml:LiteralString" xmi:id="_NxICcBh7Eeac6d6escPbdA" value="(skuMaterial = sku) and (unitMaterial = unit)"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_zVbuIBh3Eeac6d6escPbdA" name="sku">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_0i8DEBh3Eeac6d6escPbdA" name="unit">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_1DrFgBhfEea5D_ilAb1d4g" name="addRegisterOp"/>
+      <ownedOperation xmi:id="_1DrFgBhfEea5D_ilAb1d4g" name="newRegisterOp"/>
+      <ownedOperation xmi:id="_rmtu8Bh3Eeac6d6escPbdA" name="saveOp" method="_A_vIsBh9Eeac6d6escPbdA"/>
+      <ownedOperation xmi:id="_7J2I0Bh7Eeac6d6escPbdA" name="finaliseOp" method="_mPLQQBh8Eeac6d6escPbdA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Lf_zgBheEea5D_ilAb1d4g" name="State">
       <ownedLiteral xmi:id="_WcwmkBhfEea5D_ilAb1d4g" name="Idle"/>
@@ -63,7 +83,9 @@
     </packagedElement>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_RL4tYBhgEea5D_ilAb1d4g" name="registerEvent" operation="_bhXlYBheEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_bqtcsBhgEea5D_ilAb1d4g" name="validEvent" operation="_smVs0BhfEea5D_ilAb1d4g"/>
-    <packagedElement xmi:type="uml:CallEvent" xmi:id="_gLoqMBhgEea5D_ilAb1d4g" name="addRegisterEvent" operation="_1DrFgBhfEea5D_ilAb1d4g"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_gLoqMBhgEea5D_ilAb1d4g" name="newRegisterEvent" operation="_1DrFgBhfEea5D_ilAb1d4g"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_xw6DgBh7Eeac6d6escPbdA" name="saveEvent" operation="_rmtu8Bh3Eeac6d6escPbdA"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_3F-DsBh7Eeac6d6escPbdA" name="finaliseEvent" operation="_7J2I0Bh7Eeac6d6escPbdA"/>
   </packagedElement>
   <profileApplication xmi:id="_tjgDNxhgEea5D_ilAb1d4g">
     <eAnnotations xmi:id="_tjp0MBhgEea5D_ilAb1d4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
