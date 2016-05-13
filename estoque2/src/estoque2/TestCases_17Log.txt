@@ -1,0 +1,38 @@
+### Test Case Generation Statistics
+### Test Goal Satisfaction
+ - defined 6 test goals
+ - satisfied 4 test goals (66.66666666666666 %)
+
+### unsatisfied test goals
+
+ - not satisfied: (test goal #1 - traversed transition) 
+   from node Register::Region1::Registered
+   to node tmp2
+   triggered by finaliseEvent
+ - not satisfied: (test goal #2 - traversed transition) 
+   from node Register::Region1::Validating
+   to node tmp4
+   triggered by saveEvent
+   with condition truth: true
+((registerStatus = true))
+
+### satisfied test goals
+
+ - satisfied: (test goal #3 - traversed transition) 
+   from node Register::Region1::Validating
+   to node Register::Region1::Registering
+   triggered by default
+   with condition truth: true
+((registerStatus = false))
+ - satisfied: (test goal #4 - traversed transition) 
+   from node Register::Region1::Registering
+   to node tmp3
+   triggered by validEvent
+ - satisfied: (test goal #5 - traversed transition) 
+   from node Register::Region1::Idle
+   to node tmp1
+   triggered by registerEvent
+ - satisfied: (test goal #6 - traversed transition) 
+   from node Register::Region1::Inicial
+   to node Register::Region1::Idle
+   triggered by default
