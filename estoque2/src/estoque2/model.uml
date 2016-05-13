@@ -40,8 +40,6 @@
             <ownedRule xmi:id="_rAaDcBikEeaRgpctdEmmLA">
               <specification xmi:type="uml:LiteralString" xmi:id="_sfwWUBikEeaRgpctdEmmLA" value="registerStatus = true"/>
             </ownedRule>
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_A_vIsBh9Eeac6d6escPbdA" name="saveOp" specification="_rmtu8Bh3Eeac6d6escPbdA"/>
-            <trigger xmi:id="_9sjgsBh8Eeac6d6escPbdA" event="_xw6DgBh7Eeac6d6escPbdA"/>
           </transition>
           <transition xmi:id="_kDfCsBimEeaRgpctdEmmLA" name="Validating2Registering" guard="_SI-5EBizEeaRgpctdEmmLA" source="_Cdfc8Bh5Eeac6d6escPbdA" target="_sX82EBhgEea5D_ilAb1d4g">
             <ownedRule xmi:id="_SI-5EBizEeaRgpctdEmmLA">
@@ -92,7 +90,6 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_1DrFgBhfEea5D_ilAb1d4g" name="newRegisterOp" method="_XQrgwBi1EeaRgpctdEmmLA"/>
-      <ownedOperation xmi:id="_rmtu8Bh3Eeac6d6escPbdA" name="saveOp" method="_A_vIsBh9Eeac6d6escPbdA"/>
       <ownedOperation xmi:id="_7J2I0Bh7Eeac6d6escPbdA" name="finaliseOp" method="_mPLQQBh8Eeac6d6escPbdA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Lf_zgBheEea5D_ilAb1d4g" name="State">
@@ -104,7 +101,7 @@
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_RL4tYBhgEea5D_ilAb1d4g" name="registerEvent" operation="_bhXlYBheEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_bqtcsBhgEea5D_ilAb1d4g" name="validEvent" operation="_smVs0BhfEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_gLoqMBhgEea5D_ilAb1d4g" name="newRegisterEvent" operation="_1DrFgBhfEea5D_ilAb1d4g"/>
-    <packagedElement xmi:type="uml:CallEvent" xmi:id="_xw6DgBh7Eeac6d6escPbdA" name="saveEvent" operation="_rmtu8Bh3Eeac6d6escPbdA"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_xw6DgBh7Eeac6d6escPbdA" name="saveEvent"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_3F-DsBh7Eeac6d6escPbdA" name="finaliseEvent" operation="_7J2I0Bh7Eeac6d6escPbdA"/>
   </packagedElement>
   <profileApplication xmi:id="_tjgDNxhgEea5D_ilAb1d4g">
