@@ -38,13 +38,13 @@
           </transition>
           <transition xmi:id="_QYpJMBh5Eeac6d6escPbdA" name="Validating2Registered" guard="_rAaDcBikEeaRgpctdEmmLA" source="_Cdfc8Bh5Eeac6d6escPbdA" target="_0I8GIBhgEea5D_ilAb1d4g">
             <ownedRule xmi:id="_rAaDcBikEeaRgpctdEmmLA">
-              <specification xmi:type="uml:LiteralString" xmi:id="_sfwWUBikEeaRgpctdEmmLA" value="registerStatus = true"/>
+              <specification xmi:type="uml:LiteralString" xmi:id="_sfwWUBikEeaRgpctdEmmLA" value="(registerStatus = true) and (skuMaterial >= 1) and (unitMaterial >= 1)"/>
             </ownedRule>
             <effect xmi:type="uml:FunctionBehavior" xmi:id="_LpsZoBkwEeaF3YWcYTnpuQ" specification="_lZ6r4BkvEeaF3YWcYTnpuQ"/>
           </transition>
           <transition xmi:id="_kDfCsBimEeaRgpctdEmmLA" name="Validating2Registering" guard="_SI-5EBizEeaRgpctdEmmLA" source="_Cdfc8Bh5Eeac6d6escPbdA" target="_sX82EBhgEea5D_ilAb1d4g">
             <ownedRule xmi:id="_SI-5EBizEeaRgpctdEmmLA">
-              <specification xmi:type="uml:LiteralString" xmi:id="_TbwvkBizEeaRgpctdEmmLA" value="registerStatus = false"/>
+              <specification xmi:type="uml:LiteralString" xmi:id="_TbwvkBizEeaRgpctdEmmLA" value="(registerStatus = false) and (skuMaterial &lt; 1) and (unitMaterial &lt; 1)"/>
             </ownedRule>
           </transition>
           <transition xmi:id="_yWuWcBi0EeaRgpctdEmmLA" name="Registered2Registering" source="_0I8GIBhgEea5D_ilAb1d4g" target="_sX82EBhgEea5D_ilAb1d4g">
@@ -92,7 +92,10 @@
       </ownedOperation>
       <ownedOperation xmi:id="_1DrFgBhfEea5D_ilAb1d4g" name="newRegisterOp" method="_XQrgwBi1EeaRgpctdEmmLA"/>
       <ownedOperation xmi:id="_7J2I0Bh7Eeac6d6escPbdA" name="finaliseOp" method="_mPLQQBh8Eeac6d6escPbdA"/>
-      <ownedOperation xmi:id="_lZ6r4BkvEeaF3YWcYTnpuQ" name="saveOp" method="_LpsZoBkwEeaF3YWcYTnpuQ">
+      <ownedOperation xmi:id="_lZ6r4BkvEeaF3YWcYTnpuQ" name="saveOp" method="_LpsZoBkwEeaF3YWcYTnpuQ" precondition="_e0MCIBk8EeaF3YWcYTnpuQ">
+        <ownedRule xmi:id="_e0MCIBk8EeaF3YWcYTnpuQ">
+          <specification xmi:type="uml:LiteralString" xmi:id="_f_UYgBk8EeaF3YWcYTnpuQ" value="(skuMaterial >= 1) and (unitMaterial >= 1)"/>
+        </ownedRule>
         <ownedParameter xmi:id="_0VRQ4BkvEeaF3YWcYTnpuQ" name="skuMaterial">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
