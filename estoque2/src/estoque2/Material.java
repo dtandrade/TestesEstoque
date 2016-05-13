@@ -48,10 +48,12 @@ public class Material extends java.lang.Object implements java.lang.Cloneable{
 					if(registerStatus == false){
 						state = State.Registering;
 					}else{
+						saveData(skuMaterial, unitMaterial);
 						state = State.Registered;
 					}
 			
 			}else if((state == State.Registered) && (sEventName.compareTo("newRegisterEvent") == 0)){
+			
 				state = State.Registering;
 				
 			}else if((state == State.Registered) && (sEventName.compareTo("finaliseEvent") == 0)){
@@ -68,5 +70,9 @@ public class Material extends java.lang.Object implements java.lang.Cloneable{
 	}
 	protected void closeSection(){
 		adapter.appCloseSection();
+	}
+	
+	protected void saveData(Integer sku, Integer unit){
+		adapter.appSaveData(sku, unit);
 	}
 }

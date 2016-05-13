@@ -6,4 +6,6 @@ public interface TelaCadastro {
 
 	Boolean appRegister(Integer sku, Integer unit);
 
+	void appSaveData(Integer sku, Integer unit);
+
 }
