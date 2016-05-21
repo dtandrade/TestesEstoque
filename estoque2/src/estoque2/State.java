@@ -4,5 +4,8 @@ public enum State {
 	Idle,
 	Registering,
 	Registered,
-	Validating
+	Validating,
+	Input,
+	Removing,
+	Removed
 }

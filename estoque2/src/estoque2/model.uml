@@ -75,6 +75,48 @@
           </subvertex>
         </region>
       </ownedBehavior>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_XhWB8B9jEeagJr3Ta-HsKg" name="Remove">
+        <region xmi:id="_aQxcoB9jEeagJr3Ta-HsKg" name="Region1">
+          <transition xmi:id="_-rUuIB9jEeagJr3Ta-HsKg" name="initial2Idle" source="_hSl5kB9jEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg"/>
+          <transition xmi:id="_OEJ8gB9oEeagJr3Ta-HsKg" name="idle2Input" source="_lvx2kB9jEeagJr3Ta-HsKg" target="_Bv2PEB9kEeagJr3Ta-HsKg">
+            <trigger xmi:id="_YQqP8B9sEeagJr3Ta-HsKg" event="_OXAfsB9rEeagJr3Ta-HsKg"/>
+          </transition>
+          <transition xmi:id="_Th4JcB9oEeagJr3Ta-HsKg" name="Input2Removing" source="_Bv2PEB9kEeagJr3Ta-HsKg" target="_Qbj4wB9oEeagJr3Ta-HsKg">
+            <trigger xmi:id="_e1fO4B9sEeagJr3Ta-HsKg" event="_VAxpAB9rEeagJr3Ta-HsKg"/>
+          </transition>
+          <transition xmi:id="_ZEI4IB9oEeagJr3Ta-HsKg" name="Removing2Removed" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_W41eMB9oEeagJr3Ta-HsKg">
+            <trigger xmi:id="_iRpzwB9sEeagJr3Ta-HsKg" event="_Xpc7cB9rEeagJr3Ta-HsKg"/>
+          </transition>
+          <transition xmi:id="_fCGrYB9oEeagJr3Ta-HsKg" name="Removed2Final" source="_W41eMB9oEeagJr3Ta-HsKg" target="_dvOuQB9oEeagJr3Ta-HsKg">
+            <trigger xmi:id="_KUprQB9wEeagJr3Ta-HsKg" event="_3F-DsBh7Eeac6d6escPbdA"/>
+          </transition>
+          <transition xmi:id="_wJo3QB9sEeagJr3Ta-HsKg" name="Removing2Idle" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg">
+            <trigger xmi:id="_0sbbEB9uEeagJr3Ta-HsKg" event="_i7EZoB9rEeagJr3Ta-HsKg"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_hSl5kB9jEeagJr3Ta-HsKg" name="Initial "/>
+          <subvertex xmi:type="uml:State" xmi:id="_lvx2kB9jEeagJr3Ta-HsKg" name="Idle">
+            <ownedRule xmi:id="_AStT8B9qEeagJr3Ta-HsKg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_CNtBAB9qEeagJr3Ta-HsKg" value="state=State::Idle"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_Bv2PEB9kEeagJr3Ta-HsKg" name="Input">
+            <ownedRule xmi:id="_HDPzoB9qEeagJr3Ta-HsKg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_MvHKQB9qEeagJr3Ta-HsKg" value="state=State::Input"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_Qbj4wB9oEeagJr3Ta-HsKg" name="Removing">
+            <ownedRule xmi:id="_P-4R4B9qEeagJr3Ta-HsKg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_Vgb18B9qEeagJr3Ta-HsKg" value="state=State::Removing"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_W41eMB9oEeagJr3Ta-HsKg" name="Removed">
+            <ownedRule xmi:id="_aHe5kB9qEeagJr3Ta-HsKg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_a-s1cB9qEeagJr3Ta-HsKg" value="state=State::Removed"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_dvOuQB9oEeagJr3Ta-HsKg" name="Final"/>
+        </region>
+      </ownedBehavior>
       <ownedOperation xmi:id="_bhXlYBheEea5D_ilAb1d4g" name="registerOp" method="_0ESkwBhiEea5D_ilAb1d4g"/>
       <ownedOperation xmi:id="_smVs0BhfEea5D_ilAb1d4g" name="validOp" method="_yW1loBh8Eeac6d6escPbdA" postcondition="_L0ZQABh7Eeac6d6escPbdA _w3if0BitEeaRgpctdEmmLA">
         <ownedRule xmi:id="_L0ZQABh7Eeac6d6escPbdA">
@@ -103,18 +145,29 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_nDCUkB9rEeagJr3Ta-HsKg" name="removeOp"/>
+      <ownedOperation xmi:id="_8i_PAB9rEeagJr3Ta-HsKg" name="okOp"/>
+      <ownedOperation xmi:id="__92zYB9rEeagJr3Ta-HsKg" name="confirmOp"/>
+      <ownedOperation xmi:id="_EfUzcB9sEeagJr3Ta-HsKg" name="cancelOp"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Lf_zgBheEea5D_ilAb1d4g" name="State">
       <ownedLiteral xmi:id="_WcwmkBhfEea5D_ilAb1d4g" name="Idle"/>
       <ownedLiteral xmi:id="_ZpscoBhfEea5D_ilAb1d4g" name="Registering"/>
       <ownedLiteral xmi:id="_ccab4BhfEea5D_ilAb1d4g" name="Registered"/>
       <ownedLiteral xmi:id="_pur_EBizEeaRgpctdEmmLA" name="Validating"/>
+      <ownedLiteral xmi:id="_dS3F4B9pEeagJr3Ta-HsKg" name="Input"/>
+      <ownedLiteral xmi:id="_hHqNMB9pEeagJr3Ta-HsKg" name="Removing"/>
+      <ownedLiteral xmi:id="_3-5qsB9pEeagJr3Ta-HsKg" name="Removed"/>
     </packagedElement>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_RL4tYBhgEea5D_ilAb1d4g" name="registerEvent" operation="_bhXlYBheEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_bqtcsBhgEea5D_ilAb1d4g" name="validEvent" operation="_smVs0BhfEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_gLoqMBhgEea5D_ilAb1d4g" name="newRegisterEvent" operation="_1DrFgBhfEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_xw6DgBh7Eeac6d6escPbdA" name="saveEvent" operation="_lZ6r4BkvEeaF3YWcYTnpuQ"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_3F-DsBh7Eeac6d6escPbdA" name="finaliseEvent" operation="_7J2I0Bh7Eeac6d6escPbdA"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_OXAfsB9rEeagJr3Ta-HsKg" name="removeEvent" operation="_nDCUkB9rEeagJr3Ta-HsKg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_VAxpAB9rEeagJr3Ta-HsKg" name="okEvent" operation="_8i_PAB9rEeagJr3Ta-HsKg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_Xpc7cB9rEeagJr3Ta-HsKg" name="confirmEvent" operation="__92zYB9rEeagJr3Ta-HsKg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_i7EZoB9rEeagJr3Ta-HsKg" name="cancelEvent" operation="_EfUzcB9sEeagJr3Ta-HsKg"/>
   </packagedElement>
   <profileApplication xmi:id="_tjgDNxhgEea5D_ilAb1d4g">
     <eAnnotations xmi:id="_tjp0MBhgEea5D_ilAb1d4g" source="http://www.eclipse.org/uml2/2.0.0/UML">
