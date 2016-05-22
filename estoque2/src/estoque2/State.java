@@ -6,6 +6,6 @@ public enum State {
 	Registered,
 	Validating,
 	Input,
-	Removing,
-	Removed
+	Deleting,
+	Deleted
 }

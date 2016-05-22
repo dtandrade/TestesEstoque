@@ -17,7 +17,7 @@
       </ownedAttribute>
       <ownedAttribute xmi:id="_OddAIBh_Eeac6d6escPbdA" name="registerStatus">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
-        <defaultValue xmi:type="uml:LiteralString" xmi:id="_VBFFMBh_Eeac6d6escPbdA" value="true">
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_VBFFMBh_Eeac6d6escPbdA" value="false">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </defaultValue>
       </ownedAttribute>
@@ -58,7 +58,7 @@
             </ownedRule>
           </subvertex>
           <subvertex xmi:type="uml:FinalState" xmi:id="_j0fuoBhdEea5D_ilAb1d4g" name="Final"/>
-          <subvertex xmi:type="uml:State" xmi:id="_sX82EBhgEea5D_ilAb1d4g" name="Registering" stateInvariant="__ABkcBhgEea5D_ilAb1d4g">
+          <subvertex xmi:type="uml:State" xmi:id="_sX82EBhgEea5D_ilAb1d4g" name="Registering" visibility="private" stateInvariant="__ABkcBhgEea5D_ilAb1d4g">
             <ownedRule xmi:id="__ABkcBhgEea5D_ilAb1d4g">
               <specification xmi:type="uml:LiteralString" xmi:id="_Aje7QBhhEea5D_ilAb1d4g" value="state=State::Registering"/>
             </ownedRule>
@@ -75,46 +75,56 @@
           </subvertex>
         </region>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_XhWB8B9jEeagJr3Ta-HsKg" name="Remove">
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_XhWB8B9jEeagJr3Ta-HsKg" name="Delete">
         <region xmi:id="_aQxcoB9jEeagJr3Ta-HsKg" name="Region1">
           <transition xmi:id="_-rUuIB9jEeagJr3Ta-HsKg" name="initial2Idle" source="_hSl5kB9jEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg"/>
           <transition xmi:id="_OEJ8gB9oEeagJr3Ta-HsKg" name="idle2Input" source="_lvx2kB9jEeagJr3Ta-HsKg" target="_Bv2PEB9kEeagJr3Ta-HsKg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_bq23ICA2EeaqMrs_8NqikA" name="deleteOp" specification="_nDCUkB9rEeagJr3Ta-HsKg"/>
             <trigger xmi:id="_YQqP8B9sEeagJr3Ta-HsKg" event="_OXAfsB9rEeagJr3Ta-HsKg"/>
           </transition>
-          <transition xmi:id="_Th4JcB9oEeagJr3Ta-HsKg" name="Input2Removing" source="_Bv2PEB9kEeagJr3Ta-HsKg" target="_Qbj4wB9oEeagJr3Ta-HsKg">
+          <transition xmi:id="_Th4JcB9oEeagJr3Ta-HsKg" name="Input2Deleting" guard="_hk0JwCBaEea4H4oB0Z6_Jg" source="_Bv2PEB9kEeagJr3Ta-HsKg" target="_Qbj4wB9oEeagJr3Ta-HsKg">
+            <ownedRule xmi:id="_hk0JwCBaEea4H4oB0Z6_Jg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_irbMgCBaEea4H4oB0Z6_Jg" value="registerStatus = true"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_vMFbECA2EeaqMrs_8NqikA" name="okOp" specification="_8i_PAB9rEeagJr3Ta-HsKg"/>
             <trigger xmi:id="_e1fO4B9sEeagJr3Ta-HsKg" event="_VAxpAB9rEeagJr3Ta-HsKg"/>
           </transition>
-          <transition xmi:id="_ZEI4IB9oEeagJr3Ta-HsKg" name="Removing2Removed" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_W41eMB9oEeagJr3Ta-HsKg">
+          <transition xmi:id="_ZEI4IB9oEeagJr3Ta-HsKg" name="Deleting2Deleted" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_W41eMB9oEeagJr3Ta-HsKg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_zzymACA2EeaqMrs_8NqikA" name="confirmOp" specification="__92zYB9rEeagJr3Ta-HsKg"/>
             <trigger xmi:id="_iRpzwB9sEeagJr3Ta-HsKg" event="_Xpc7cB9rEeagJr3Ta-HsKg"/>
           </transition>
-          <transition xmi:id="_fCGrYB9oEeagJr3Ta-HsKg" name="Removed2Final" source="_W41eMB9oEeagJr3Ta-HsKg" target="_dvOuQB9oEeagJr3Ta-HsKg">
-            <trigger xmi:id="_KUprQB9wEeagJr3Ta-HsKg" event="_3F-DsBh7Eeac6d6escPbdA"/>
-          </transition>
-          <transition xmi:id="_wJo3QB9sEeagJr3Ta-HsKg" name="Removing2Idle" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg">
+          <transition xmi:id="_wJo3QB9sEeagJr3Ta-HsKg" name="Deleting2Idle" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_JLe8UCA3EeaqMrs_8NqikA" name="cancelOp" specification="_EfUzcB9sEeagJr3Ta-HsKg"/>
             <trigger xmi:id="_0sbbEB9uEeagJr3Ta-HsKg" event="_i7EZoB9rEeagJr3Ta-HsKg"/>
           </transition>
+          <transition xmi:id="_DJ-igCBbEea4H4oB0Z6_Jg" name="Input2Idle" guard="_Y6DjoCBbEea4H4oB0Z6_Jg" source="_Bv2PEB9kEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg">
+            <ownedRule xmi:id="_Y6DjoCBbEea4H4oB0Z6_Jg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_aP248CBbEea4H4oB0Z6_Jg" value="registerStatus = false"/>
+            </ownedRule>
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_MyiYMCBbEea4H4oB0Z6_Jg" name="okOp" specification="_8i_PAB9rEeagJr3Ta-HsKg"/>
+            <trigger xmi:id="_Ode3ECBbEea4H4oB0Z6_Jg" event="_VAxpAB9rEeagJr3Ta-HsKg"/>
+          </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_hSl5kB9jEeagJr3Ta-HsKg" name="Initial "/>
-          <subvertex xmi:type="uml:State" xmi:id="_lvx2kB9jEeagJr3Ta-HsKg" name="Idle">
-            <ownedRule xmi:id="_AStT8B9qEeagJr3Ta-HsKg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_CNtBAB9qEeagJr3Ta-HsKg" value="state=State::Idle"/>
+          <subvertex xmi:type="uml:State" xmi:id="_lvx2kB9jEeagJr3Ta-HsKg" name="Idle" stateInvariant="_jS1DMCA4EeaqMrs_8NqikA">
+            <ownedRule xmi:id="_jS1DMCA4EeaqMrs_8NqikA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_twacYCA4EeaqMrs_8NqikA" value="state=State::Idle"/>
             </ownedRule>
           </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_Bv2PEB9kEeagJr3Ta-HsKg" name="Input">
-            <ownedRule xmi:id="_HDPzoB9qEeagJr3Ta-HsKg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_MvHKQB9qEeagJr3Ta-HsKg" value="state=State::Input"/>
+          <subvertex xmi:type="uml:State" xmi:id="_Bv2PEB9kEeagJr3Ta-HsKg" name="Input" stateInvariant="_6205ACA4EeaqMrs_8NqikA">
+            <ownedRule xmi:id="_6205ACA4EeaqMrs_8NqikA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_8aiugCA4EeaqMrs_8NqikA" value="state=State::Input"/>
             </ownedRule>
           </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_Qbj4wB9oEeagJr3Ta-HsKg" name="Removing">
-            <ownedRule xmi:id="_P-4R4B9qEeagJr3Ta-HsKg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_Vgb18B9qEeagJr3Ta-HsKg" value="state=State::Removing"/>
+          <subvertex xmi:type="uml:State" xmi:id="_Qbj4wB9oEeagJr3Ta-HsKg" name="Deleting" stateInvariant="_ANy9sCA5EeaqMrs_8NqikA">
+            <ownedRule xmi:id="_ANy9sCA5EeaqMrs_8NqikA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_BPZkoCA5EeaqMrs_8NqikA" value="state=State::Deleting"/>
             </ownedRule>
           </subvertex>
-          <subvertex xmi:type="uml:State" xmi:id="_W41eMB9oEeagJr3Ta-HsKg" name="Removed">
-            <ownedRule xmi:id="_aHe5kB9qEeagJr3Ta-HsKg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_a-s1cB9qEeagJr3Ta-HsKg" value="state=State::Removed"/>
+          <subvertex xmi:type="uml:State" xmi:id="_W41eMB9oEeagJr3Ta-HsKg" name="Deleted" stateInvariant="_ERfcoCA5EeaqMrs_8NqikA">
+            <ownedRule xmi:id="_ERfcoCA5EeaqMrs_8NqikA">
+              <specification xmi:type="uml:LiteralString" xmi:id="_FS5PQCA5EeaqMrs_8NqikA" value="state=State::Deleted"/>
             </ownedRule>
           </subvertex>
-          <subvertex xmi:type="uml:FinalState" xmi:id="_dvOuQB9oEeagJr3Ta-HsKg" name="Final"/>
         </region>
       </ownedBehavior>
       <ownedOperation xmi:id="_bhXlYBheEea5D_ilAb1d4g" name="registerOp" method="_0ESkwBhiEea5D_ilAb1d4g"/>
@@ -145,10 +155,10 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_nDCUkB9rEeagJr3Ta-HsKg" name="removeOp"/>
-      <ownedOperation xmi:id="_8i_PAB9rEeagJr3Ta-HsKg" name="okOp"/>
-      <ownedOperation xmi:id="__92zYB9rEeagJr3Ta-HsKg" name="confirmOp"/>
-      <ownedOperation xmi:id="_EfUzcB9sEeagJr3Ta-HsKg" name="cancelOp"/>
+      <ownedOperation xmi:id="_nDCUkB9rEeagJr3Ta-HsKg" name="deleteOp" method="_bq23ICA2EeaqMrs_8NqikA"/>
+      <ownedOperation xmi:id="_8i_PAB9rEeagJr3Ta-HsKg" name="okOp" method="_vMFbECA2EeaqMrs_8NqikA _MyiYMCBbEea4H4oB0Z6_Jg"/>
+      <ownedOperation xmi:id="__92zYB9rEeagJr3Ta-HsKg" name="confirmOp" method="_zzymACA2EeaqMrs_8NqikA"/>
+      <ownedOperation xmi:id="_EfUzcB9sEeagJr3Ta-HsKg" name="cancelOp" method="_JLe8UCA3EeaqMrs_8NqikA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Lf_zgBheEea5D_ilAb1d4g" name="State">
       <ownedLiteral xmi:id="_WcwmkBhfEea5D_ilAb1d4g" name="Idle"/>
@@ -156,15 +166,15 @@
       <ownedLiteral xmi:id="_ccab4BhfEea5D_ilAb1d4g" name="Registered"/>
       <ownedLiteral xmi:id="_pur_EBizEeaRgpctdEmmLA" name="Validating"/>
       <ownedLiteral xmi:id="_dS3F4B9pEeagJr3Ta-HsKg" name="Input"/>
-      <ownedLiteral xmi:id="_hHqNMB9pEeagJr3Ta-HsKg" name="Removing"/>
-      <ownedLiteral xmi:id="_3-5qsB9pEeagJr3Ta-HsKg" name="Removed"/>
+      <ownedLiteral xmi:id="_hHqNMB9pEeagJr3Ta-HsKg" name="Deleting"/>
+      <ownedLiteral xmi:id="_3-5qsB9pEeagJr3Ta-HsKg" name="Deleted"/>
     </packagedElement>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_RL4tYBhgEea5D_ilAb1d4g" name="registerEvent" operation="_bhXlYBheEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_bqtcsBhgEea5D_ilAb1d4g" name="validEvent" operation="_smVs0BhfEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_gLoqMBhgEea5D_ilAb1d4g" name="newRegisterEvent" operation="_1DrFgBhfEea5D_ilAb1d4g"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_xw6DgBh7Eeac6d6escPbdA" name="saveEvent" operation="_lZ6r4BkvEeaF3YWcYTnpuQ"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_3F-DsBh7Eeac6d6escPbdA" name="finaliseEvent" operation="_7J2I0Bh7Eeac6d6escPbdA"/>
-    <packagedElement xmi:type="uml:CallEvent" xmi:id="_OXAfsB9rEeagJr3Ta-HsKg" name="removeEvent" operation="_nDCUkB9rEeagJr3Ta-HsKg"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_OXAfsB9rEeagJr3Ta-HsKg" name="deleteEvent" operation="_nDCUkB9rEeagJr3Ta-HsKg"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_VAxpAB9rEeagJr3Ta-HsKg" name="okEvent" operation="_8i_PAB9rEeagJr3Ta-HsKg"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_Xpc7cB9rEeagJr3Ta-HsKg" name="confirmEvent" operation="__92zYB9rEeagJr3Ta-HsKg"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_i7EZoB9rEeagJr3Ta-HsKg" name="cancelEvent" operation="_EfUzcB9sEeagJr3Ta-HsKg"/>
