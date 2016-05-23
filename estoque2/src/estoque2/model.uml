@@ -82,27 +82,27 @@
             <effect xmi:type="uml:FunctionBehavior" xmi:id="_bq23ICA2EeaqMrs_8NqikA" name="deleteOp" specification="_nDCUkB9rEeagJr3Ta-HsKg"/>
             <trigger xmi:id="_YQqP8B9sEeagJr3Ta-HsKg" event="_OXAfsB9rEeagJr3Ta-HsKg"/>
           </transition>
-          <transition xmi:id="_Th4JcB9oEeagJr3Ta-HsKg" name="Input2Deleting" guard="_hk0JwCBaEea4H4oB0Z6_Jg" source="_Bv2PEB9kEeagJr3Ta-HsKg" target="_Qbj4wB9oEeagJr3Ta-HsKg">
-            <ownedRule xmi:id="_hk0JwCBaEea4H4oB0Z6_Jg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_irbMgCBaEea4H4oB0Z6_Jg" value="registerStatus = true"/>
+          <transition xmi:id="_VwOssCDvEeaaQoNGYMDxJg" name="Input2Deleting" source="_Bv2PEB9kEeagJr3Ta-HsKg" target="_Qbj4wB9oEeagJr3Ta-HsKg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_D5cb4CDwEeaaQoNGYMDxJg" name="okOp" specification="_8i_PAB9rEeagJr3Ta-HsKg"/>
+            <trigger xmi:id="_A5WH8CDwEeaaQoNGYMDxJg" event="_VAxpAB9rEeagJr3Ta-HsKg"/>
+          </transition>
+          <transition xmi:id="_b7ackCDvEeaaQoNGYMDxJg" name="Deleting2Input" guard="_Jnj1QCDwEeaaQoNGYMDxJg" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_Bv2PEB9kEeagJr3Ta-HsKg">
+            <ownedRule xmi:id="_Jnj1QCDwEeaaQoNGYMDxJg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_KyR78CDwEeaaQoNGYMDxJg" value="(registerStatus = false) and (skuMaterial&lt;1)"/>
             </ownedRule>
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_vMFbECA2EeaqMrs_8NqikA" name="okOp" specification="_8i_PAB9rEeagJr3Ta-HsKg"/>
-            <trigger xmi:id="_e1fO4B9sEeagJr3Ta-HsKg" event="_VAxpAB9rEeagJr3Ta-HsKg"/>
           </transition>
-          <transition xmi:id="_ZEI4IB9oEeagJr3Ta-HsKg" name="Deleting2Deleted" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_W41eMB9oEeagJr3Ta-HsKg">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_zzymACA2EeaqMrs_8NqikA" name="confirmOp" specification="__92zYB9rEeagJr3Ta-HsKg"/>
-            <trigger xmi:id="_iRpzwB9sEeagJr3Ta-HsKg" event="_Xpc7cB9rEeagJr3Ta-HsKg"/>
-          </transition>
-          <transition xmi:id="_wJo3QB9sEeagJr3Ta-HsKg" name="Deleting2Idle" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_JLe8UCA3EeaqMrs_8NqikA" name="cancelOp" specification="_EfUzcB9sEeagJr3Ta-HsKg"/>
-            <trigger xmi:id="_0sbbEB9uEeagJr3Ta-HsKg" event="_i7EZoB9rEeagJr3Ta-HsKg"/>
-          </transition>
-          <transition xmi:id="_DJ-igCBbEea4H4oB0Z6_Jg" name="Input2Idle" guard="_Y6DjoCBbEea4H4oB0Z6_Jg" source="_Bv2PEB9kEeagJr3Ta-HsKg" target="_lvx2kB9jEeagJr3Ta-HsKg">
-            <ownedRule xmi:id="_Y6DjoCBbEea4H4oB0Z6_Jg">
-              <specification xmi:type="uml:LiteralString" xmi:id="_aP248CBbEea4H4oB0Z6_Jg" value="registerStatus = false"/>
+          <transition xmi:id="_kuDW4CDvEeaaQoNGYMDxJg" name="Deleting2Confirm" guard="_QQhtUCDwEeaaQoNGYMDxJg" source="_Qbj4wB9oEeagJr3Ta-HsKg" target="_hwQwECDvEeaaQoNGYMDxJg">
+            <ownedRule xmi:id="_QQhtUCDwEeaaQoNGYMDxJg">
+              <specification xmi:type="uml:LiteralString" xmi:id="_RQUWYCDwEeaaQoNGYMDxJg" value="(registerStatus = true) and (skuMaterial >=1)"/>
             </ownedRule>
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_MyiYMCBbEea4H4oB0Z6_Jg" name="okOp" specification="_8i_PAB9rEeagJr3Ta-HsKg"/>
-            <trigger xmi:id="_Ode3ECBbEea4H4oB0Z6_Jg" event="_VAxpAB9rEeagJr3Ta-HsKg"/>
+          </transition>
+          <transition xmi:id="_l-PMYCDvEeaaQoNGYMDxJg" name="Confirm2Deleted" source="_hwQwECDvEeaaQoNGYMDxJg" target="_W41eMB9oEeagJr3Ta-HsKg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_lxkz8CDwEeaaQoNGYMDxJg" name="confirmOp" specification="__92zYB9rEeagJr3Ta-HsKg"/>
+            <trigger xmi:id="_mxpJ0CDwEeaaQoNGYMDxJg" event="_Xpc7cB9rEeagJr3Ta-HsKg"/>
+          </transition>
+          <transition xmi:id="_97t4MCD6EeaQjpGXLpL1xw" name="Confirm2Input" source="_hwQwECDvEeaaQoNGYMDxJg" target="_Bv2PEB9kEeagJr3Ta-HsKg">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_Ok0_gCD7EeaQjpGXLpL1xw" name="cancelOp" specification="_EfUzcB9sEeagJr3Ta-HsKg"/>
+            <trigger xmi:id="_It6PcCD7EeaQjpGXLpL1xw" event="_i7EZoB9rEeagJr3Ta-HsKg"/>
           </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_hSl5kB9jEeagJr3Ta-HsKg" name="Initial "/>
           <subvertex xmi:type="uml:State" xmi:id="_lvx2kB9jEeagJr3Ta-HsKg" name="Idle" stateInvariant="_jS1DMCA4EeaqMrs_8NqikA">
@@ -125,6 +125,7 @@
               <specification xmi:type="uml:LiteralString" xmi:id="_FS5PQCA5EeaqMrs_8NqikA" value="state=State::Deleted"/>
             </ownedRule>
           </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_hwQwECDvEeaaQoNGYMDxJg" name="Confirm"/>
         </region>
       </ownedBehavior>
       <ownedOperation xmi:id="_bhXlYBheEea5D_ilAb1d4g" name="registerOp" method="_0ESkwBhiEea5D_ilAb1d4g"/>
@@ -156,9 +157,19 @@
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_nDCUkB9rEeagJr3Ta-HsKg" name="deleteOp" method="_bq23ICA2EeaqMrs_8NqikA"/>
-      <ownedOperation xmi:id="_8i_PAB9rEeagJr3Ta-HsKg" name="okOp" method="_vMFbECA2EeaqMrs_8NqikA _MyiYMCBbEea4H4oB0Z6_Jg"/>
-      <ownedOperation xmi:id="__92zYB9rEeagJr3Ta-HsKg" name="confirmOp" method="_zzymACA2EeaqMrs_8NqikA"/>
-      <ownedOperation xmi:id="_EfUzcB9sEeagJr3Ta-HsKg" name="cancelOp" method="_JLe8UCA3EeaqMrs_8NqikA"/>
+      <ownedOperation xmi:id="_8i_PAB9rEeagJr3Ta-HsKg" name="okOp" method="_D5cb4CDwEeaaQoNGYMDxJg" postcondition="_EuTUYCD9EeaQjpGXLpL1xw _HIVG0CD9EeaQjpGXLpL1xw">
+        <ownedRule xmi:id="_EuTUYCD9EeaQjpGXLpL1xw">
+          <specification xmi:type="uml:LiteralString" xmi:id="_F5A0ACD9EeaQjpGXLpL1xw" value="(skuMaterial = sku)"/>
+        </ownedRule>
+        <ownedRule xmi:id="_HIVG0CD9EeaQjpGXLpL1xw">
+          <specification xmi:type="uml:LiteralString" xmi:id="_IYj_oCD9EeaQjpGXLpL1xw" value="if(skuMaterial &lt; 1) then registerStatus = false else registerStatus = true endif"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_v0FCYCDqEeaaQoNGYMDxJg" name="sku">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="__92zYB9rEeagJr3Ta-HsKg" name="confirmOp" method="_lxkz8CDwEeaaQoNGYMDxJg"/>
+      <ownedOperation xmi:id="_EfUzcB9sEeagJr3Ta-HsKg" name="cancelOp" method="_Ok0_gCD7EeaQjpGXLpL1xw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Lf_zgBheEea5D_ilAb1d4g" name="State">
       <ownedLiteral xmi:id="_WcwmkBhfEea5D_ilAb1d4g" name="Idle"/>

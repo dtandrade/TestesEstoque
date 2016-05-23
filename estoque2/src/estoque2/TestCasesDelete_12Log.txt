@@ -1,7 +1,7 @@
 ### Test Case Generation Statistics
 ### Test Goal Satisfaction
- - defined 6 test goals
- - satisfied 6 test goals (100.0 %)
+ - defined 7 test goals
+ - satisfied 7 test goals (100.0 %)
 
 ### unsatisfied test goals
 
@@ -9,30 +9,34 @@
 ### satisfied test goals
 
  - satisfied: (test goal #1 - traversed transition) 
-   from node Delete::Region1::Deleting
+   from node Delete::Region1::Confirm
    to node tmp3
    triggered by confirmEvent
  - satisfied: (test goal #2 - traversed transition) 
-   from node Delete::Region1::Deleting
+   from node Delete::Region1::Confirm
    to node tmp4
    triggered by cancelEvent
  - satisfied: (test goal #3 - traversed transition) 
+   from node Delete::Region1::Deleting
+   to node Delete::Region1::Input
+   triggered by default
+   with condition truth: true
+((registerStatus = false) and (skuMaterial < 1))
+ - satisfied: (test goal #4 - traversed transition) 
+   from node Delete::Region1::Deleting
+   to node Delete::Region1::Confirm
+   triggered by default
+   with condition truth: true
+((registerStatus = true) and (skuMaterial >= 1))
+ - satisfied: (test goal #5 - traversed transition) 
    from node Delete::Region1::Input
    to node tmp2
    triggered by okEvent
-   with condition truth: true
-((registerStatus = true))
- - satisfied: (test goal #4 - traversed transition) 
-   from node Delete::Region1::Input
-   to node tmp5
-   triggered by okEvent
-   with condition truth: true
-((registerStatus = false))
- - satisfied: (test goal #5 - traversed transition) 
+ - satisfied: (test goal #6 - traversed transition) 
    from node Delete::Region1::Idle
    to node tmp1
    triggered by deleteEvent
- - satisfied: (test goal #6 - traversed transition) 
+ - satisfied: (test goal #7 - traversed transition) 
    from node Delete::Region1::Initial 
    to node Delete::Region1::Idle
    triggered by default
