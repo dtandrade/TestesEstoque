@@ -66,18 +66,21 @@ public class Material extends java.lang.Object implements java.lang.Cloneable{
 				state = State.Input;
 				
 			}else if((state == State.Input) && (sEventName.compareTo("okEvent") == 0)){
+				
 				registerStatus = registerIsValid(skuMaterial, unitMaterial);
+				
 				if(registerStatus == true){
-					state = State.Deleting;
+					state = State.Confirm;
 				}else{
-					state = State.Idle;
+					state = State.Input;
 				}
 					
 				
-			}else if((state == State.Deleting) && (sEventName.compareTo("confirmEvent") == 0)){
+			}else if((state == State.Confirm) && (sEventName.compareTo("confirmEvent") == 0)){
+				//deleteData();
 				state = State.Deleted;
-			}else if((state == State.Deleting) && (sEventName.compareTo("cancelEvent") == 0)){
-				state = State.Idle;
+			}else if((state == State.Confirm) && (sEventName.compareTo("cancelEvent") == 0)){
+				state = State.Input;
 				
 			}
 						
@@ -103,5 +106,9 @@ public class Material extends java.lang.Object implements java.lang.Cloneable{
 	
 	protected void saveData(Integer sku, Integer unit){
 		adapter.appSaveData(sku, unit);
+	}
+	
+	protected void deleteData(Integer sku){
+		adapter.appDeleteData(sku);
 	}
 }

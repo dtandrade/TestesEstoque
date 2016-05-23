@@ -8,4 +8,6 @@ public interface TelaCadastro {
 
 	void appSaveData(Integer sku, Integer unit);
 
+	void appDeleteData(Integer sku);
+
 }
