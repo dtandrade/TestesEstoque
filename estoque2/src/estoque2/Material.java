@@ -58,8 +58,7 @@ public class Material extends java.lang.Object implements java.lang.Cloneable{
 				state = State.Registering;
 				
 			}else if((state == State.Registered) && (sEventName.compareTo("finaliseEvent") == 0)){
-				//closeSection();
-				
+				//closeSection();	
 			}
 			
 			if((state == State.Idle) && (sEventName.compareTo("deleteEvent") == 0)){
@@ -74,21 +73,14 @@ public class Material extends java.lang.Object implements java.lang.Cloneable{
 				}else{
 					state = State.Input;
 				}
-					
 				
 			}else if((state == State.Confirm) && (sEventName.compareTo("confirmEvent") == 0)){
 				//deleteData();
 				state = State.Deleted;
 			}else if((state == State.Confirm) && (sEventName.compareTo("cancelEvent") == 0)){
 				state = State.Input;
-				
 			}
-						
-			
-			
 		}
-		
-		
 	}
 	
 	protected Boolean registerIsValid(Integer sku, Integer unit){
