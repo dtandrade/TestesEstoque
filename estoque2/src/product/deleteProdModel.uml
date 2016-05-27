@@ -12,6 +12,10 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </defaultValue>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_h7BvsCLeEeabjolPR-cu-Q" name="skuProdValid">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_mkeAACLeEeabjolPR-cu-Q" value="false"/>
+      </ownedAttribute>
       <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_OVBm4CHVEeaPkZOeQf-kXA" name="RegisterProduct">
         <region xmi:id="_OWwFMCHVEeaPkZOeQf-kXA" name="region1">
           <transition xmi:id="_oRJi8CHbEeaPkZOeQf-kXA" name="Initial2Idle" source="_hrGcACHbEeaPkZOeQf-kXA" target="_k4lrsCHbEeaPkZOeQf-kXA"/>
@@ -66,6 +70,68 @@
           <subvertex xmi:type="uml:FinalState" xmi:id="_clzrQCHdEeaPkZOeQf-kXA" name="Final"/>
         </region>
       </ownedBehavior>
+      <ownedBehavior xmi:type="uml:StateMachine" xmi:id="_5264MCLKEeabjolPR-cu-Q" name="DeleteProduct">
+        <region xmi:id="_7KUZwCLKEeabjolPR-cu-Q" name="Region1">
+          <transition xmi:id="_iu1E0CLWEeabjolPR-cu-Q" name="Initial2Idle" source="_Hw1OUCLLEeabjolPR-cu-Q" target="_O0dpICLLEeabjolPR-cu-Q"/>
+          <transition xmi:id="_nZ2pgCLWEeabjolPR-cu-Q" name="Idle2Input" source="_O0dpICLLEeabjolPR-cu-Q" target="_T6Mz4CLLEeabjolPR-cu-Q">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_60EuYCQGEeau8pqQ7XhGYA" name="deleteOp" specification="_7v9foCLZEeabjolPR-cu-Q"/>
+            <trigger xmi:id="_1xSxACQGEeau8pqQ7XhGYA" name="" event="_73e5YCLYEeabjolPR-cu-Q"/>
+          </transition>
+          <transition xmi:id="_sF8lMCLWEeabjolPR-cu-Q" name="Input2Deleting" source="_T6Mz4CLLEeabjolPR-cu-Q" target="_VpwF8CLLEeabjolPR-cu-Q">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_FN2loCQHEeau8pqQ7XhGYA" name="okOp" specification="_0ssRMCLZEeabjolPR-cu-Q"/>
+            <trigger xmi:id="_DZz1ICQHEeau8pqQ7XhGYA" event="_b7u5ACLZEeabjolPR-cu-Q"/>
+          </transition>
+          <transition xmi:id="_u8sI0CLWEeabjolPR-cu-Q" name="Deleting2Confirm" guard="_MeL-MCLfEeabjolPR-cu-Q" source="_VpwF8CLLEeabjolPR-cu-Q" target="_X6BfcCLLEeabjolPR-cu-Q">
+            <ownedRule xmi:id="_MeL-MCLfEeabjolPR-cu-Q">
+              <specification xmi:type="uml:LiteralString" xmi:id="_NjmuICLfEeabjolPR-cu-Q" value="skuProdValid = true"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_x1FSQCLWEeabjolPR-cu-Q" name="Confirm2Deleted" source="_X6BfcCLLEeabjolPR-cu-Q" target="_aU0t8CLLEeabjolPR-cu-Q">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_Lev78CQHEeau8pqQ7XhGYA" name="confirmOp" specification="_-s8OICLZEeabjolPR-cu-Q"/>
+            <trigger xmi:id="_QjTa8CQHEeau8pqQ7XhGYA" event="_eUfgICLZEeabjolPR-cu-Q"/>
+          </transition>
+          <transition xmi:id="_3hc_MCLWEeabjolPR-cu-Q" name="Deleted2Final" source="_aU0t8CLLEeabjolPR-cu-Q" target="_1B3XUCLWEeabjolPR-cu-Q">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_WAeOQCQHEeau8pqQ7XhGYA" name="finaliseOp" specification="_Fh6VACHhEeaPkZOeQf-kXA"/>
+            <trigger xmi:id="_TlcWQCQHEeau8pqQ7XhGYA" event="_djU8ECHgEeaPkZOeQf-kXA"/>
+          </transition>
+          <transition xmi:id="__oxEkCLWEeabjolPR-cu-Q" name="Deleting2Input" guard="_Q4PHoCLfEeabjolPR-cu-Q" source="_VpwF8CLLEeabjolPR-cu-Q" target="_T6Mz4CLLEeabjolPR-cu-Q">
+            <ownedRule xmi:id="_Q4PHoCLfEeabjolPR-cu-Q">
+              <specification xmi:type="uml:LiteralString" xmi:id="_SGr3wCLfEeabjolPR-cu-Q" value="skuProdValid = false"/>
+            </ownedRule>
+          </transition>
+          <transition xmi:id="_BZdKICQLEeau8pqQ7XhGYA" name="Confirm2Input" source="_X6BfcCLLEeabjolPR-cu-Q" target="_T6Mz4CLLEeabjolPR-cu-Q">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_Vg_qsCQMEeau8pqQ7XhGYA" name="cancelOp" specification="_LnWsECQMEeau8pqQ7XhGYA"/>
+            <trigger xmi:id="_CwNFMCQMEeau8pqQ7XhGYA" event="_JT9GECQMEeau8pqQ7XhGYA"/>
+          </transition>
+          <subvertex xmi:type="uml:Pseudostate" xmi:id="_Hw1OUCLLEeabjolPR-cu-Q" name="Initial"/>
+          <subvertex xmi:type="uml:State" xmi:id="_O0dpICLLEeabjolPR-cu-Q" name="Idle" stateInvariant="_1RiVkCLXEeabjolPR-cu-Q">
+            <ownedRule xmi:id="_1RiVkCLXEeabjolPR-cu-Q">
+              <specification xmi:type="uml:LiteralString" xmi:id="_2LHo8CLXEeabjolPR-cu-Q" value="state=ProductState::Idle"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_T6Mz4CLLEeabjolPR-cu-Q" name="Input" stateInvariant="_SQYqgCLYEeabjolPR-cu-Q">
+            <ownedRule xmi:id="_SQYqgCLYEeabjolPR-cu-Q">
+              <specification xmi:type="uml:LiteralString" xmi:id="_TARPUCLYEeabjolPR-cu-Q" value="state=ProductState::Input"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_VpwF8CLLEeabjolPR-cu-Q" name="Deleting" stateInvariant="_WweKgCLYEeabjolPR-cu-Q">
+            <ownedRule xmi:id="_WweKgCLYEeabjolPR-cu-Q">
+              <specification xmi:type="uml:LiteralString" xmi:id="_XiSB8CLYEeabjolPR-cu-Q" value="state=ProductState::Deleting"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_X6BfcCLLEeabjolPR-cu-Q" name="Confirm" stateInvariant="_a6ukcCLYEeabjolPR-cu-Q">
+            <ownedRule xmi:id="_a6ukcCLYEeabjolPR-cu-Q">
+              <specification xmi:type="uml:LiteralString" xmi:id="_cmrI4CLYEeabjolPR-cu-Q" value="state=ProductState::Confirm"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:State" xmi:id="_aU0t8CLLEeabjolPR-cu-Q" name="Deleted" stateInvariant="_ggFqcCLYEeabjolPR-cu-Q">
+            <ownedRule xmi:id="_ggFqcCLYEeabjolPR-cu-Q">
+              <specification xmi:type="uml:LiteralString" xmi:id="_hPr7YCLYEeabjolPR-cu-Q" value="state=ProductState::Deleted"/>
+            </ownedRule>
+          </subvertex>
+          <subvertex xmi:type="uml:FinalState" xmi:id="_1B3XUCLWEeabjolPR-cu-Q" name="Final"/>
+        </region>
+      </ownedBehavior>
       <ownedOperation xmi:id="_xNMeoCHgEeaPkZOeQf-kXA" name="registerOp" method="_1yh4wCHlEeaPkZOeQf-kXA"/>
       <ownedOperation xmi:id="_8ib4kCHgEeaPkZOeQf-kXA" name="validProdOp" method="_BE8BICHmEeaPkZOeQf-kXA" postcondition="_daxCsCHwEeaPkZOeQf-kXA">
         <ownedRule xmi:id="_daxCsCHwEeaPkZOeQf-kXA" name="">
@@ -75,20 +141,39 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_Fh6VACHhEeaPkZOeQf-kXA" name="finaliseOp" method="_eQUEQCHoEeaPkZOeQf-kXA"/>
+      <ownedOperation xmi:id="_Fh6VACHhEeaPkZOeQf-kXA" name="finaliseOp" method="_eQUEQCHoEeaPkZOeQf-kXA _WAeOQCQHEeau8pqQ7XhGYA"/>
       <ownedOperation xmi:id="_RH68kCHmEeaPkZOeQf-kXA" name="saveProdOp" method="_JjtkQCHmEeaPkZOeQf-kXA"/>
       <ownedOperation xmi:id="_BwoQMCHrEeaPkZOeQf-kXA" name="newRegProdOp" method="_O1AsgCHrEeaPkZOeQf-kXA"/>
+      <ownedOperation xmi:id="_0ssRMCLZEeabjolPR-cu-Q" name="okOp" method="_FN2loCQHEeau8pqQ7XhGYA" postcondition="_VIVAoCLbEeabjolPR-cu-Q">
+        <ownedRule xmi:id="_VIVAoCLbEeabjolPR-cu-Q">
+          <specification xmi:type="uml:LiteralString" xmi:id="_uoEDACLeEeabjolPR-cu-Q" value="skuProdValid = sku"/>
+        </ownedRule>
+        <ownedParameter xmi:id="_WQmQQCLbEeabjolPR-cu-Q" name="sku">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_7v9foCLZEeabjolPR-cu-Q" name="deleteOp" method="_60EuYCQGEeau8pqQ7XhGYA"/>
+      <ownedOperation xmi:id="_-s8OICLZEeabjolPR-cu-Q" name="confirmOp" method="_Lev78CQHEeau8pqQ7XhGYA"/>
+      <ownedOperation xmi:id="_LnWsECQMEeau8pqQ7XhGYA" name="cancelOp" method="_Vg_qsCQMEeau8pqQ7XhGYA"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_2zx-kCHeEeaPkZOeQf-kXA" name="ProductState">
       <ownedLiteral xmi:id="_EggNQCHfEeaPkZOeQf-kXA" name="Idle"/>
       <ownedLiteral xmi:id="_ICg7cCHfEeaPkZOeQf-kXA" name="Registering"/>
       <ownedLiteral xmi:id="_LXvx4CHfEeaPkZOeQf-kXA" name="Validating"/>
       <ownedLiteral xmi:id="_Nv24wCHfEeaPkZOeQf-kXA" name="Registered"/>
+      <ownedLiteral xmi:id="_TttaECQKEeau8pqQ7XhGYA" name="Input"/>
+      <ownedLiteral xmi:id="_XWMjsCQKEeau8pqQ7XhGYA" name="Deleting"/>
+      <ownedLiteral xmi:id="_ZPavICQKEeau8pqQ7XhGYA" name="Deleted"/>
+      <ownedLiteral xmi:id="_bTxzkCQKEeau8pqQ7XhGYA" name="Confirm"/>
     </packagedElement>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_ZMCBICHfEeaPkZOeQf-kXA" name="registerEvent" operation="_xNMeoCHgEeaPkZOeQf-kXA"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_YVBEICHgEeaPkZOeQf-kXA" name="validProdEvent" operation="_8ib4kCHgEeaPkZOeQf-kXA"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_djU8ECHgEeaPkZOeQf-kXA" name="finaliseEvent" operation="_Fh6VACHhEeaPkZOeQf-kXA"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_Oau9kCHmEeaPkZOeQf-kXA" name="saveEvent" operation="_RH68kCHmEeaPkZOeQf-kXA"/>
     <packagedElement xmi:type="uml:CallEvent" xmi:id="_-FdmACHqEeaPkZOeQf-kXA" name="newRegProdEvent" operation="_BwoQMCHrEeaPkZOeQf-kXA"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_73e5YCLYEeabjolPR-cu-Q" name="deleteEvent" operation="_7v9foCLZEeabjolPR-cu-Q"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_b7u5ACLZEeabjolPR-cu-Q" name="okEvent" operation="_0ssRMCLZEeabjolPR-cu-Q"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_eUfgICLZEeabjolPR-cu-Q" name="confirmEvent" operation="_-s8OICLZEeabjolPR-cu-Q"/>
+    <packagedElement xmi:type="uml:CallEvent" xmi:id="_JT9GECQMEeau8pqQ7XhGYA" name="cancelEvent" operation="_LnWsECQMEeau8pqQ7XhGYA"/>
   </packagedElement>
 </uml:Model>

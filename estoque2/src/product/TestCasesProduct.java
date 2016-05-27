@@ -20,8 +20,7 @@ public class TestCasesProduct{
 		assertEquals(true, (oTestObject.state == ProductState.Registering));
 		oTestObject.handleEvent("validProdEvent", status3);
 		assertEquals(true, (oTestObject.state == ProductState.Registered));
-		oTestObject.handleEvent("newRegProdEvent");
-		assertEquals(true, (oTestObject.state == ProductState.Registering));
+		oTestObject.handleEvent("finaliseEvent");
 		
 	}
 	
@@ -35,7 +34,8 @@ public class TestCasesProduct{
 		assertEquals(true, (oTestObject.state == ProductState.Registering));
 		oTestObject.handleEvent("validProdEvent", status3);
 		assertEquals(true, (oTestObject.state == ProductState.Registered));
-		oTestObject.handleEvent("finaliseEvent");
+		oTestObject.handleEvent("newRegProdEvent");
+		assertEquals(true, (oTestObject.state == ProductState.Registering));
 		
 	}
 	

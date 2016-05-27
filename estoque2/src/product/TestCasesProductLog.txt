@@ -10,12 +10,12 @@
 
  - satisfied: (test goal #1 - traversed transition) 
    from node RegisterProduct::region1::Registered
-   to node tmp5
-   triggered by newRegProdEvent
- - satisfied: (test goal #2 - traversed transition) 
-   from node RegisterProduct::region1::Registered
    to node tmp4
    triggered by finaliseEvent
+ - satisfied: (test goal #2 - traversed transition) 
+   from node RegisterProduct::region1::Registered
+   to node tmp5
+   triggered by newRegProdEvent
  - satisfied: (test goal #3 - traversed transition) 
    from node RegisterProduct::region1::Validating
    to node tmp3

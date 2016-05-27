@@ -4,6 +4,10 @@ public enum ProductState {
 	Idle,
 	Registering,
 	Registered,
-	Validating
+	Validating,
+	Input,
+	Deleting,
+	Deleted,
+	Confirm
 
 }
