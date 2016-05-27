@@ -99,9 +99,9 @@
               <specification xmi:type="uml:LiteralString" xmi:id="_SGr3wCLfEeabjolPR-cu-Q" value="skuProdValid = false"/>
             </ownedRule>
           </transition>
-          <transition xmi:id="_BZdKICQLEeau8pqQ7XhGYA" name="Confirm2Input" source="_X6BfcCLLEeabjolPR-cu-Q" target="_T6Mz4CLLEeabjolPR-cu-Q">
-            <effect xmi:type="uml:FunctionBehavior" xmi:id="_Vg_qsCQMEeau8pqQ7XhGYA" name="cancelOp" specification="_LnWsECQMEeau8pqQ7XhGYA"/>
-            <trigger xmi:id="_CwNFMCQMEeau8pqQ7XhGYA" event="_JT9GECQMEeau8pqQ7XhGYA"/>
+          <transition xmi:id="_uNKrsCQbEeaqv7CZLUP5Yw" name="Confirm2Idle" source="_X6BfcCLLEeabjolPR-cu-Q" target="_O0dpICLLEeabjolPR-cu-Q">
+            <effect xmi:type="uml:FunctionBehavior" xmi:id="_-bR5ECQbEeaqv7CZLUP5Yw" name="cancelOp" specification="_LnWsECQMEeau8pqQ7XhGYA"/>
+            <trigger xmi:id="_FAYk0CQcEeaqv7CZLUP5Yw" event="_JT9GECQMEeau8pqQ7XhGYA"/>
           </transition>
           <subvertex xmi:type="uml:Pseudostate" xmi:id="_Hw1OUCLLEeabjolPR-cu-Q" name="Initial"/>
           <subvertex xmi:type="uml:State" xmi:id="_O0dpICLLEeabjolPR-cu-Q" name="Idle" stateInvariant="_1RiVkCLXEeabjolPR-cu-Q">
@@ -154,7 +154,7 @@
       </ownedOperation>
       <ownedOperation xmi:id="_7v9foCLZEeabjolPR-cu-Q" name="deleteOp" method="_60EuYCQGEeau8pqQ7XhGYA"/>
       <ownedOperation xmi:id="_-s8OICLZEeabjolPR-cu-Q" name="confirmOp" method="_Lev78CQHEeau8pqQ7XhGYA"/>
-      <ownedOperation xmi:id="_LnWsECQMEeau8pqQ7XhGYA" name="cancelOp" method="_Vg_qsCQMEeau8pqQ7XhGYA"/>
+      <ownedOperation xmi:id="_LnWsECQMEeau8pqQ7XhGYA" name="cancelOp" method="_-bR5ECQbEeaqv7CZLUP5Yw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_2zx-kCHeEeaPkZOeQf-kXA" name="ProductState">
       <ownedLiteral xmi:id="_EggNQCHfEeaPkZOeQf-kXA" name="Idle"/>
